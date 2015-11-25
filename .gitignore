@@ -196,7 +196,7 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
-# Xcode proejcts
+# Xcode projects
 xcuserdata
 
 .DS_Store
