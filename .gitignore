@@ -12,6 +12,7 @@
 
 # Build results
 [Dd]ebug/*
+[Dd]ebug/*.tlog
 ![Dd]ebug/*.dll
 [Dd]ebugPublic/
 [Rr]elease/
@@ -40,7 +41,6 @@ TestResult.xml
 dlldata.c
 
 *.exe
-*.tlog
 *.idb
 *_i.c
 *_p.c
