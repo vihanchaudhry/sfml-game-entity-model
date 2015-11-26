@@ -89,6 +89,10 @@ void Core::draw()
 	{
 		window.draw(it->getSprite());
 	}
+	for (std::vector<Bomb>::iterator it = player.getBombs().begin(); it != player.getBombs().end(); ++it)
+	{
+		window.draw(it->getSprite());
+	}
 	window.draw(player.getSprite());
 	window.display();
 }

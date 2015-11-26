@@ -79,13 +79,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\Bomb.cpp" />
+    <ClCompile Include="..\..\src\Core.cpp" />
+    <ClCompile Include="..\..\src\Entity.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\Overlap.cpp" />
+    <ClCompile Include="..\..\src\Player.cpp" />
     <ClCompile Include="..\..\src\ResourcePathWindows.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\Bomb.h" />
+    <ClInclude Include="..\..\src\Core.h" />
+    <ClInclude Include="..\..\src\Entity.h" />
     <ClInclude Include="..\..\src\Overlap.h" />
+    <ClInclude Include="..\..\src\Player.h" />
     <ClInclude Include="..\..\src\ResourcePath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\ResourcePathMac.mm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

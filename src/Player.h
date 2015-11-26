@@ -8,6 +8,7 @@
 #include <iostream>
 #include "ResourcePath.h"
 #include "Entity.h"
+#include "Bomb.h"
 
 class Player : public Entity
 {
@@ -18,10 +19,17 @@ private:
 	int currDirection; // 0: nothing, 1: up, 2: down, 3: left, 4: right
 	bool isLeftStep;
 	sf::Clock animClock;
+
+	// Bomb Stuff
+	std::vector<Bomb> bombs;
+	Bomb bomb;
 public:
 	// Constructors
 	Player();
 	Player(std::string);
+
+	// Accessors
+	std::vector<Bomb> &getBombs() { return bombs; }
 
 	// Mutators
 	void setTexture(std::string);
