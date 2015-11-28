@@ -12,7 +12,6 @@
 
 # Build results
 [Dd]ebug/*
-[Dd]ebug/*.tlog
 ![Dd]ebug/*.dll
 [Dd]ebugPublic/
 [Rr]elease/
@@ -42,6 +41,7 @@ dlldata.c
 
 *.exe
 *.idb
+*.tlog
 *_i.c
 *_p.c
 *_i.h
