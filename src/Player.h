@@ -21,6 +21,7 @@ private:
 	sf::Clock animClock;
 
 	// Bomb Stuff
+	unsigned int numOfBombs;
 	std::vector<Bomb> bombs;
 	Bomb bomb;
 public:
@@ -41,6 +42,7 @@ public:
 	void right(float);
 	
 	void update(float);
+	void dropBomb(); /// \brief Drop a bomb!
 
 	// Animation
 	void animate();

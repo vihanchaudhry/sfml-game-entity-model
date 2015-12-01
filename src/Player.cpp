@@ -6,14 +6,10 @@ Player::Player()
 	isLeftStep = false;
 	currDirection = 2;
 	animClock.restart().asSeconds();
+	numOfBombs = 3;
 
-	// Initialize bombs
+	// Initialize bomb object
 	bomb.setTexture("bomb.png");
-	for (int i = 0; i < 3; i++)
-	{
-		bombs.push_back(bomb);
-		bombs[i].setPosition(400 + 200 * i, 360);
-	}
 }
 
 Player::Player(std::string textureFile) : Entity(textureFile)
@@ -22,13 +18,10 @@ Player::Player(std::string textureFile) : Entity(textureFile)
 	isLeftStep = false;
 	currDirection = 2;
 	animClock.restart().asSeconds();
+	numOfBombs = 3;
 
-	// Initialize bombs
+	// Initialize bomb object
 	bomb.setTexture("bomb.png");
-	for (int i = 0; i < 3; i++)
-	{
-		bombs.push_back(bomb);
-	}
 
 	// Populate spritesheet rects vector
 	for (int c = 0; c < 4; c++)
@@ -115,6 +108,15 @@ void Player::update(float deltaTime)
 	{
 		animate();
 		animClock.restart().asSeconds();
+	}
+}
+
+void Player::dropBomb()
+{
+	if (bombs.size() < numOfBombs)
+	{
+		bombs.push_back(bomb);
+		bombs.back().setPosition(sprite.getPosition());
 	}
 }
 
