@@ -15,6 +15,7 @@ private:
 	std::vector<sf::IntRect> spriteRects; // 12 sprites (indices 0 to 11) going right, 
 										  // then down [0-2: down, 3-5: right, 6-8: up, 9-11: left]
 										  // last one is empty
+	sf::Clock animClock;
 public:
 	// Constructors
 	Bomb();
@@ -22,6 +23,8 @@ public:
 
 	// Mutators
 	void setTexture(std::string);
+
+	void update();
 
 	// Animation
 	void animate();
