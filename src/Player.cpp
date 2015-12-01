@@ -101,6 +101,12 @@ void Player::update(float deltaTime)
 	{
 		currDirection = 0;
 	}
+
+	// Update bombs
+	for (std::vector<Bomb>::iterator it = bombs.begin(); it != bombs.end(); ++it)
+	{
+		it->update();
+	}
 	
 	// Change anim every 0.167 seconds
 	if (prevDirection != currDirection ||
@@ -117,6 +123,7 @@ void Player::dropBomb()
 	{
 		bombs.push_back(bomb);
 		bombs.back().setPosition(sprite.getPosition());
+		bombs.back().getAnimClock().restart().asSeconds();
 	}
 }
 

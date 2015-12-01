@@ -21,6 +21,9 @@ public:
 	Bomb();
 	Bomb(std::string);
 
+	// Accessors
+	sf::Clock &getAnimClock() { return animClock; }
+
 	// Mutators
 	void setTexture(std::string);
 

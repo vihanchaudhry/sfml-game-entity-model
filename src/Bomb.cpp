@@ -45,26 +45,26 @@ void Bomb::setTexture(std::string textureFile)
 
 void Bomb::update()
 {
-	animate();
+	if (animClock.getElapsedTime().asSeconds() >= 1.f && sprite.getTextureRect().left < spriteRects[3].left)
+	{
+		animate();
+		animClock.restart().asSeconds();
+	}
+	else if (animClock.getElapsedTime().asSeconds() >= 0.03f && 
+			(sprite.getTextureRect().top > spriteRects[0].top || sprite.getTextureRect().left >= spriteRects[3].left))
+	{
+		animate();
+		animClock.restart().asSeconds();
+	}
 }
 
 void Bomb::animate()
 {
-	for (int i = 1; i < 4; i++)
+	for (int i = 0; i < 11; i++)
 	{
-		if (animClock.getElapsedTime().asSeconds() >= 0.75f)
+		if (sprite.getTextureRect() == spriteRects[i])
 		{
-			sprite.setTextureRect(spriteRects[i]);
-			animClock.restart().asSeconds();
+			sprite.setTextureRect(spriteRects[++i]);
 		}
 	}
-	for (int i = 0; i < 7; i++)
-	{
-		if (animClock.getElapsedTime().asSeconds() >= 0.15f)
-		{
-			sprite.setTextureRect(spriteRects[i]);
-			animClock.restart().asSeconds();
-		}
-	}
-
 }
