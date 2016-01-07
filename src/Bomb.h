@@ -28,6 +28,7 @@ public:
 	void setTexture(std::string);
 
 	void update();
+	void explode(Entity);
 
 	// Animation
 	void animate();

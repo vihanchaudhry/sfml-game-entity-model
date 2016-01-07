@@ -50,12 +50,23 @@ void Bomb::update()
 		animate();
 		animClock.restart().asSeconds();
 	}
-	else if (animClock.getElapsedTime().asSeconds() >= 0.03f && 
+	else if (animClock.getElapsedTime().asSeconds() >= 0.03f &&
 			(sprite.getTextureRect().top > spriteRects[0].top || sprite.getTextureRect().left >= spriteRects[3].left))
 	{
 		animate();
 		animClock.restart().asSeconds();
 	}
+
+	// Explosion
+	if (sprite.getTextureRect() == spriteRects[4])
+	{
+		//explode();
+	}
+}
+
+void Bomb::explode(Entity bomber)
+{
+	
 }
 
 void Bomb::animate()
